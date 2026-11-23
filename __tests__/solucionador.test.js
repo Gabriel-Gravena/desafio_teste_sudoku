@@ -1,6 +1,3 @@
-/**
- * Sudoku Binário 6 x 6 — resolver, contar soluções e gerar puzzles.
- */
 const {
   ehValido,
   estaResolvido,
@@ -21,7 +18,6 @@ const SOLUCAO = [
   [1, 1, 0, 1, 0, 0],
 ];
 
-// 8 pistas, solução única = SOLUCAO
 const PUZZLE = [
   [_, _, _, _, _, _],
   [_, 1, _, 0, 0, _],
@@ -31,7 +27,6 @@ const PUZZLE = [
   [1, _, _, 1, _, 0],
 ];
 
-// válido "por enquanto", mas sem solução: as linhas 0 e 1 são forçadas a [0,1,0,1,0,1]
 const SEM_SOLUCAO = [
   [0, _, 0, _, 0, _],
   [0, _, 0, _, 0, _],

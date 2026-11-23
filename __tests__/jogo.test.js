@@ -1,8 +1,3 @@
-/**
- * Sudoku Binário 6 x 6 — classe de jogo.
- *
- * new SudokuBinario(gradeInicial): células preenchidas na grade inicial são FIXAS.
- */
 const { SudokuBinario } = require('../src/sudokuBinario');
 
 const _ = null;

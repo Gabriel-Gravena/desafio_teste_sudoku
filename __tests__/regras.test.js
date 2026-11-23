@@ -1,14 +1,3 @@
-/**
- * Sudoku Binário (Takuzu / Binairo) 6 x 6 — regras.
- *
- * Cada célula vale 0, 1 ou null (vazia). Uma grade resolvida obedece:
- *   1. No máximo DOIS números iguais seguidos (sem 000 ou 111) em linhas e colunas;
- *   2. Cada linha e cada coluna tem a mesma quantidade de 0 e 1 (3 de cada);
- *   3. Não existem duas linhas iguais nem duas colunas iguais.
- * Em grades parciais, as regras valem para o que já foi preenchido:
- *   - nenhuma linha/coluna pode ter mais de 3 zeros ou mais de 3 uns;
- *   - linhas/colunas duplicadas só contam quando ambas estão completas.
- */
 const {
   TAMANHO,
   VAZIO,
@@ -60,9 +49,9 @@ describe('temTresConsecutivos', () => {
 describe('contagemValida', () => {
   test.each([
     [[0, 0, 1, 1, 0, 1], true],
-    [[0, 0, 0, 1, 1, 1], true], // contagem ok (a regra de 3 seguidos é outra)
-    [[0, 0, 1, 0, 0, 1], false], // 4 zeros
-    [[1, 1, 0, 1, 1, 1], false], // 5 uns
+    [[0, 0, 0, 1, 1, 1], true],
+    [[0, 0, 1, 0, 0, 1], false],
+    [[1, 1, 0, 1, 1, 1], false],
     [[0, _, 0, _, 0, _], true],
     [[1, _, 1, 1, _, 1], false],
     [[_, _, _, _, _, _], true],
@@ -198,7 +187,7 @@ describe('estaCompleto / estaResolvido', () => {
 
   test('grade completa mas inválida não está resolvida', () => {
     const g = copia(SOLUCAO);
-    g[0][0] = 1; // linha 0 passa a ter 4 uns
+    g[0][0] = 1;
     expect(estaCompleto(g)).toBe(true);
     expect(estaResolvido(g)).toBe(false);
   });
